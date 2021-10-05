@@ -1,357 +1,405 @@
-1 /sbin/initsplash
-2
-3
-4
-6
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-22
-23
-24
-25
-26
-28
-29
-30
-31
-32
-34
-35
-36
-37
-38
-40
-41
-42
-43
-44
-46
-47
-48
-49
-50
-52
-53
-54
-55
-56
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-116
-117
-118
-119
-120
-121
-122
-123
-125
-128
-130
-131
-133
-134
-135
-136
-137
-138
-140
-143
-149
-153
-157
-165
-199
-223
-224
-225
-226
-227
-229
-232
-248
-255
-256
-257
-259
-260
-286
-338
-407
-414
-415
-416
-419
-422
-474
-475
-476
-525 /lib/systemd/systemd-journald
-557 /lib/systemd/systemd-udevd
-602
-609
-610
-611
-612
-620
-626
-630
-634
-635
-636
-637
-638
-639
-640
-641
-642
-644
-645
-662
-666
-672
-673
-690
-692
-719
-721
-798
-799
-800
-842
-843
-844
-845
-890 /lib/systemd/systemd-resolved
-891 /lib/systemd/systemd-timesyncd
-957 /usr/lib/accountsservice/accounts-daemon
-958 /usr/sbin/acpid
-960 avahi-daemon: running [mybeast.local]
-962 /usr/lib/bluetooth/bluetoothd
-963 /usr/sbin/cron-f
-965 /usr/bin/dbus-daemon--system--address=systemd:--nofork--nopidfile--systemd-activation--syslog-only
-966 /usr/sbin/NetworkManager--no-daemon
-972 /usr/sbin/irqbalance--foreground
-977 /usr/bin/python3/usr/bin/networkd-dispatcher--run-startup-triggers
-980 /usr/lib/policykit-1/polkitd--no-debug
-981 /usr/bin/pop-upgradedaemon
-983 /usr/sbin/rsyslogd-n-iNONE
-985 /usr/lib/snapd/snapd
-986 /usr/libexec/switcheroo-control
-987 /usr/bin/system76-powerdaemon
-988 /usr/bin/nvidia-persistenced--usernvidia-persistenced--no-persistence-mode--verbose
-989 /lib/systemd/systemd-logind
-990 /usr/sbin/thermald--systemd--dbus-enable--adaptive
-994 /usr/lib/udisks2/udisksd
-997 /sbin/wpa_supplicant-u-s-O/run/wpa_supplicant
-1004 avahi-daemon: chroot helper
-1038 /usr/bin/mono/usr/lib/mono/4.5/xsp4.exe--port8084--address0.0.0.0--appconfigdir/etc/xsp4--nonstop
-1095 /usr/sbin/ModemManager
-1131 /usr/sbin/gdm3
-1158 gdm-session-worker [pam/gdm-autologin]
-1163 /lib/systemd/systemd--user
-1164 (sd-pam)
-1180 /usr/bin/pulseaudio--daemonize=no--log-target=journal
-1182 /usr/libexec/tracker-miner-fs
-1190 /usr/bin/gnome-keyring-daemon--daemonize--login
-1197 /usr/libexec/fwupd/fwupd
-1199 /usr/lib/gdm3/gdm-x-session--run-scriptenv GNOME_SHELL_SESSION_MODE=pop /usr/bin/gnome-session --systemd --session=pop
-1202 /usr/bin/dbus-daemon--session--address=systemd:--nofork--nopidfile--systemd-activation--syslog-only
-1204 /usr/lib/xorg/Xorgvt2-displayfd3-auth/run/user/1000/gdm/Xauthority-backgroundnone-noreset-keeptty-verbose3
-1207 /usr/libexec/rtkit-daemon
-1214 /usr/libexec/gvfsd
-1220 /usr/lib/upower/upowerd
-1222 /usr/libexec/gvfsd-fuse/run/user/1000/gvfs-f-obig_writes
-1233 /usr/libexec/gvfs-udisks2-volume-monitor
-1253 /usr/libexec/gvfs-goa-volume-monitor
-1259 /usr/libexec/goa-daemon
-1293 /usr/libexec/goa-identity-service
-1303 /usr/libexec/gvfs-mtp-volume-monitor
-1308 /usr/libexec/gvfs-gphoto2-volume-monitor
-1319 /usr/libexec/gvfs-afc-volume-monitor
-1352
-1362 /usr/libexec/gnome-session-binary--systemd--systemd--session=pop
-1442 /usr/bin/gnome-keyring-daemon--start--foreground--components=secrets
-1454 /usr/bin/ssh-agent/usr/bin/im-launchenvGNOME_SHELL_SESSION_MODE=pop/usr/bin/gnome-session--systemd--session=pop
-1477 /usr/libexec/at-spi-bus-launcher
-1482 /usr/bin/dbus-daemon--config-file=/usr/share/defaults/at-spi2/accessibility.conf--nofork--print-address3
-1488 /usr/libexec/at-spi2-registryd--use-gnome-session
-1496 /usr/libexec/gnome-session-ctl--monitor
-1502 /usr/libexec/gnome-session-binary--systemd-service--session=pop
-1516 /usr/bin/gnome-shell
-1540 ibus-daemon--paneldisable--xim
-1544 /usr/libexec/ibus-memconf
-1545 /usr/libexec/ibus-extension-gtk3
-1547 /usr/libexec/ibus-x11--kill-daemon
-1551 /usr/libexec/ibus-portal
-1564 /usr/libexec/xdg-permission-store
-1566 /usr/libexec/gnome-shell-calendar-server
-1575 /usr/libexec/evolution-source-registry
-1583 /usr/libexec/dconf-service
-1586 /usr/libexec/gvfsd-metadata
-1589 /usr/libexec/geoclue
-1594 /usr/libexec/evolution-calendar-factory
-1615 /usr/libexec/evolution-addressbook-factory
-1628 /usr/bin/gjs/usr/share/gnome-shell/org.gnome.Shell.Notifications
-1642 /usr/libexec/gsd-a11y-settings
-1643 /usr/libexec/gsd-color
-1644 /usr/libexec/gsd-datetime
-1646 /usr/libexec/gsd-housekeeping
-1648 /usr/libexec/gsd-keyboard
-1650 /usr/libexec/gsd-media-keys
-1652 /usr/libexec/gsd-power
-1653 /usr/libexec/gsd-print-notifications
-1657 /usr/libexec/gsd-rfkill
-1658 /usr/libexec/gsd-screensaver-proxy
-1661 /usr/libexec/gsd-sharing
-1663 /usr/libexec/gsd-disk-utility-notify
-1664 /usr/libexec/gsd-smartcard
-1670 /usr/libexec/gsd-sound
-1672 /usr/libexec/gsd-usb-protection
-1673 /usr/libexec/gsd-wacom
-1674 /usr/libexec/gsd-wwan
-1689 /usr/libexec/gsd-xsettings
-1692 /usr/bin/python3/usr/lib/hidpi-daemon/hidpi-notification
-1706 /usr/bin/python3/usr/lib/hidpi-daemon/hidpi-daemon
-1726 /usr/libexec/evolution-data-server/evolution-alarm-notify
-1734 /usr/libexec/ibus-engine-simple
-1772 /usr/libexec/gsd-printer
-1803 /usr/libexec/colord
-1945 /usr/bin/python3/usr/lib/pop-transition/service.py
-1961 /usr/libexec/gvfsd-trash--spawner:1.4/org/gtk/gvfs/exec_spaw/0
-2184
-2270 /usr/sbin/cupsd-l
-2272 /usr/sbin/cups-browsed
-2273 /usr/lib/cups/notifier/dbusdbus://
-2836 io.elementary.appcenter-s
-2874 /opt/google/chrome/chrome --enable-crashpad
-2881 cat
-2882 cat
-2884 /opt/google/chrome/crashpad_handler--monitor-self--monitor-self-annotation=ptype=crashpad-handler--database=/home/iskander/.config/google-chrome/Crash Reports--metrics-dir=/home/iskander/.config/google-chrome--url=https://clients2.google.com/cr/report--annotation=channel=--annotation=lsb-release=Pop!_OS 20.04 LTS--annotation=plat=Linux--annotation=prod=Chrome_Linux--annotation=ver=93.0.4577.63--initial-client-fd=6--shared-client-connection
-2886 /opt/google/chrome/crashpad_handler--no-periodic-tasks--monitor-self-annotation=ptype=crashpad-handler--database=/home/iskander/.config/google-chrome/Crash Reports--url=https://clients2.google.com/cr/report--annotation=channel=--annotation=lsb-release=Pop!_OS 20.04 LTS--annotation=plat=Linux--annotation=prod=Chrome_Linux--annotation=ver=93.0.4577.63--initial-client-fd=4--shared-client-connection
-2892 /opt/google/chrome/chrome --type=zygote --no-zygote-sandbox --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --enable-crashpad
-2893 /opt/google/chrome/chrome --type=zygote --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --enable-crashpad
-2894 /opt/google/chrome/nacl_helper
-2897 /opt/google/chrome/chrome --type=zygote --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --enable-crashpad
-2915 /usr/libexec/xdg-desktop-portal
-2923 /usr/libexec/xdg-document-portal
-2928 /opt/google/chrome/chrome --type=utility --utility-sub-type=network.mojom.NetworkService --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --service-sandbox-type=none --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --shared-files=v8_context_snapshot_data:100 --enable-crashpad
-2935 /usr/libexec/xdg-desktop-portal-gtk
-2946 /opt/google/chrome/chrome --type=utility --utility-sub-type=storage.mojom.StorageService --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --service-sandbox-type=utility --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --shared-files=v8_context_snapshot_data:100
-3000 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --extension-process --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-3028 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --extension-process --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=6 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-3036 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --extension-process --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=7 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-3582 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --extension-process --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=25 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-4279 /usr/libexec/flatpak-session-helper
-4283 server--sh-n/run/user/1000/.flatpak-helper/pkcs11-flatpak-4279--providerp11-kit-trust.sopkcs11:model=p11-kit-trust?write-protected=yes
-4723 /usr/bin/ssh-agent-D-a/run/user/1000/keyring/.ssh
-4856 /opt/google/chrome/chrome --type=utility --utility-sub-type=audio.mojom.AudioService --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --service-sandbox-type=none --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --shared-files=v8_context_snapshot_data:100 --enable-crashpad
-4998
-5057
-5068 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=41 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-5466
-5523
-5534
-5536
-5541
-5547
-5549
-5551
-5718
-5852
-5926 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=49 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-6015 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --extension-process --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=51 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-6168 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=56 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-6312 bwrap--args34telegram-desktop--tg://resolve?domain=itmolnia&post=358
-6317 bwrap--args34xdg-dbus-proxy--args=36
-6318 xdg-dbus-proxy--args=36
-6320 bwrap--args34telegram-desktop--tg://resolve?domain=itmolnia&post=358
-6321 telegram-desktop--tg://resolve?domain=itmolnia&post=358
-6329 /app/bin/telegram-desktop-basegtkintegration:1.181org.telegram.desktop.BaseGtkIntegration-2118ef806729585e37c10b78f3ff567e
-6578
-6579
-6614
-6766 gjs/usr/share/gnome-shell/extensions/ding@rastersoft.com/ding.js-E-P/usr/share/gnome-shell/extensions/ding@rastersoft.com-M0-D0:27:1920:1053:1
-6849 /opt/google/chrome/chrome --type=gpu-process --field-trial-handle=1261162707872672717,3033341184938663926,131072 --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --gpu-preferences=UAAAAAAAAAAgAAAQAAAAAAAAAAAAAAAAAABgAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAABgAAAAAAAAAGAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --shared-files
-6851 /opt/google/chrome/chrome --type=broker
-6994 /usr/libexec/gnome-terminal-server
-7010 zsh
-7044 zsh
-7075 zsh
-7076 zsh
-7078 /home/iskander/.cache/gitstatus/gitstatusd-linux-x86_64-Gv1.5.1-s-1-u-1-d-1-c-1-m-1-vFATAL-t16
-7252 /snap/code/75/usr/share/code/code --no-sandbox os_labs_2
-7255 /snap/code/75/usr/share/code/code --type=zygote --no-zygote-sandbox --no-sandbox
-7256 /snap/code/75/usr/share/code/code --type=zygote --no-sandbox
-7281 /snap/code/75/usr/share/code/code --type=gpu-process --field-trial-handle=671411641355011252,14953670888142173032,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --disable-color-correct-rendering --no-sandbox --enable-crash-reporter=da724bd4-65ba-4e68-a47e-e850f63b25b4,no_channel --global-crash-keys=da724bd4-65ba-4e68-a47e-e850f63b25b4,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.60.2 --user-data-dir=/home/iskander/.config/Code --gpu-preferences=UAAAAAAAAAAgAAAQAAAAAAAAAAAAAAAAAABgAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --shared-files
-7289 /snap/code/75/usr/share/code/code --type=utility --utility-sub-type=network.mojom.NetworkService --field-trial-handle=671411641355011252,14953670888142173032,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --lang=en-US --service-sandbox-type=none --no-sandbox --enable-crash-reporter=da724bd4-65ba-4e68-a47e-e850f63b25b4,no_channel --global-crash-keys=da724bd4-65ba-4e68-a47e-e850f63b25b4,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.60.2 --user-data-dir=/home/iskander/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --shared-files=v8_context_snapshot_data:100
-7349 /snap/code/75/usr/share/code/code --type=renderer --disable-color-correct-rendering --no-sandbox --field-trial-handle=671411641355011252,14953670888142173032,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --lang=en-US --enable-crash-reporter=da724bd4-65ba-4e68-a47e-e850f63b25b4,no_channel --global-crash-keys=da724bd4-65ba-4e68-a47e-e850f63b25b4,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.60.2 --user-data-dir=/home/iskander/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --app-path=/snap/code/75/usr/share/code/resources/app --no-sandbox --no-zygote --disable-blink-features=Auxclick --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=7 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100 --vscode-window-config=vscode:dc9592e4-9dbb-44f0-9f14-86edb3138a6a
-7373 /snap/code/75/usr/share/code/code/snap/code/75/usr/share/code/resources/app/out/bootstrap-fork--type=ptyHost
-7413 /snap/code/75/usr/share/code/code --type=renderer --disable-color-correct-rendering --no-sandbox --field-trial-handle=671411641355011252,14953670888142173032,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --lang=en-US --enable-crash-reporter=da724bd4-65ba-4e68-a47e-e850f63b25b4,no_channel --global-crash-keys=da724bd4-65ba-4e68-a47e-e850f63b25b4,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.60.2 --user-data-dir=/home/iskander/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --app-path=/snap/code/75/usr/share/code/resources/app --no-sandbox --no-zygote --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=8 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100 --vscode-window-config=vscode:35959bf8-00b0-4b03-935f-fcbeab1aa44a
-7445 /snap/code/75/usr/share/code/code--inspect-port=0/snap/code/75/usr/share/code/resources/app/out/bootstrap-fork--type=extensionHost--skipWorkspaceStorageLock
-7458 /snap/code/75/usr/share/code/code/snap/code/75/usr/share/code/resources/app/out/bootstrap-fork--type=watcherService
-7473 /snap/code/75/usr/share/code/code/snap/code/75/usr/share/code/resources/app/out/bootstrap-fork--type=searchService
-7510 /usr/bin/zsh
-7516 /usr/bin/zsh
-7542 /usr/bin/zsh
-7544 /usr/bin/zsh
-7545 /home/iskander/.cache/gitstatus/gitstatusd-linux-x86_64-Gv1.5.1-s-1-u-1-d-1-c-1-m-1-vFATAL-t16
-7593 /snap/code/75/usr/share/code/code/snap/code/75/usr/share/code/resources/app/extensions/json-language-features/server/dist/node/jsonServerMain--node-ipc--clientProcessId=7445
-22340 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=66 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-22360 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=67 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-22432 /usr/bin/nautilus--gapplication-service
-22483
-22493 evince/home/iskander/Downloads/OS_Lab2.pdf
-22501 /usr/libexec/evinced
-22518
-22887
-36157 /usr/bin/gnome-calendar--gapplication-service
-36313
-36327
-36368
-36384
-37630 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=80 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-37951 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=98 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-37964 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=99 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-37992
-38010
-38022
-38096 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=103 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-38243
-38370
-38451
-38459
-38593
-38596 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=122 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-38610 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=123 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-38660
-38669
-38697 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=124 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-38724 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=125 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-38737 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=126 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-38821 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=128 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-38834 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=129 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-38887
-38891 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=2884 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=1261162707872672717,3033341184938663926,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=130 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
-38911 /usr/libexec/tracker-store
-43058 sudo./task1-7.sh
-43059 /bin/bash./task1-7.sh
+1 348 /sbin/initsplash
+2 0
+3 0
+4 0
+6 0
+9 0
+10 0
+11 0
+12 0
+13 0
+14 0
+15 0
+16 0
+17 0
+18 0
+19 0
+20 0
+22 0
+23 0
+24 0
+25 0
+26 0
+28 0
+29 0
+30 0
+31 0
+32 0
+34 0
+35 0
+36 0
+37 0
+38 0
+40 0
+41 0
+42 0
+43 0
+44 0
+46 0
+47 0
+48 0
+49 0
+50 0
+52 0
+53 0
+54 0
+55 0
+56 0
+58 0
+59 0
+60 0
+61 0
+62 0
+63 0
+64 0
+65 0
+66 0
+67 0
+68 0
+115 0
+116 0
+117 0
+118 0
+119 0
+120 0
+121 0
+122 0
+124 0
+127 0
+129 0
+130 0
+133 0
+134 0
+135 0
+136 0
+137 0
+138 0
+140 0
+143 0
+146 0
+153 0
+156 0
+164 0
+221 0
+222 0
+223 0
+224 0
+225 0
+227 0
+229 0
+247 0
+252 0
+253 0
+254 0
+255 0
+256 0
+284 0
+318 0
+406 0
+413 0
+414 0
+415 0
+418 0
+431 0
+471 0
+476 0
+477 0
+526 8 /lib/systemd/systemd-journald
+558 0 /lib/systemd/systemd-udevd
+566 0
+610 0
+612 0
+613 0
+614 0
+624 0
+631 0
+642 0
+644 0
+650 0
+651 0
+652 0
+653 0
+654 0
+655 0
+656 0
+657 0
+658 0
+659 0
+662 0
+663 0
+671 0
+672 0
+711 0
+713 0
+714 0
+727 0
+729 0
+798 0
+799 0
+800 0
+853 0
+854 0
+855 0
+856 0
+901 0 /lib/systemd/systemd-resolved
+902 0 /lib/systemd/systemd-timesyncd
+968 0 /usr/lib/accountsservice/accounts-daemon
+969 0 /usr/sbin/acpid
+971 0 avahi-daemon: running [mybeast.local]
+972 0 /usr/lib/bluetooth/bluetoothd
+973 0 /usr/sbin/cron-f
+976 0 /usr/bin/dbus-daemon--system--address=systemd:--nofork--nopidfile--systemd-activation--syslog-only
+978 8928 /usr/sbin/NetworkManager--no-daemon
+984 11063 /usr/sbin/irqbalance--foreground
+986 0 /usr/bin/python3/usr/bin/networkd-dispatcher--run-startup-triggers
+992 0 /usr/lib/policykit-1/polkitd--no-debug
+994 0 /usr/bin/pop-upgradedaemon
+995 0 /usr/bin/nvidia-persistenced--usernvidia-persistenced--no-persistence-mode--verbose
+999 0 /usr/sbin/rsyslogd-n-iNONE
+1002 0 /usr/lib/snapd/snapd
+1005 0 /usr/libexec/switcheroo-control
+1007 671 /usr/bin/system76-powerdaemon
+1010 0 /lib/systemd/systemd-logind
+1013 413 /usr/sbin/thermald--systemd--dbus-enable--adaptive
+1016 0 /usr/lib/udisks2/udisksd
+1017 0 /sbin/wpa_supplicant-u-s-O/run/wpa_supplicant
+1018 0 avahi-daemon: chroot helper
+1065 0 /usr/bin/mono/usr/lib/mono/4.5/xsp4.exe--port8084--address0.0.0.0--appconfigdir/etc/xsp4--nonstop
+1103 0 /usr/sbin/ModemManager
+1128 0 /usr/sbin/gdm3
+1169 0 gdm-session-worker [pam/gdm-autologin]
+1174 0 /lib/systemd/systemd--user
+1175 0 (sd-pam)
+1200 0 /usr/bin/pulseaudio--daemonize=no--log-target=journal
+1202 0 /usr/libexec/tracker-miner-fs
+1208 0 /usr/bin/gnome-keyring-daemon--daemonize--login
+1213 0 /usr/lib/gdm3/gdm-x-session--run-scriptenv GNOME_SHELL_SESSION_MODE=pop /usr/bin/gnome-session --systemd --session=pop
+1216 0 /usr/bin/dbus-daemon--session--address=systemd:--nofork--nopidfile--systemd-activation--syslog-only
+1217 16 /usr/libexec/rtkit-daemon
+1219 448 /usr/lib/xorg/Xorgvt2-displayfd3-auth/run/user/1000/gdm/Xauthority-backgroundnone-noreset-keeptty-verbose3
+1225 0 /usr/lib/upower/upowerd
+1230 0 /usr/libexec/gvfsd
+1242 0 /usr/libexec/gvfsd-fuse/run/user/1000/gvfs-f-obig_writes
+1259 0 /usr/libexec/gvfs-udisks2-volume-monitor
+1285 0 /usr/libexec/gvfs-goa-volume-monitor
+1292 0 /usr/libexec/goa-daemon
+1336 0 /usr/libexec/goa-identity-service
+1342 0 /usr/libexec/gvfs-mtp-volume-monitor
+1347 0 /usr/libexec/gvfs-gphoto2-volume-monitor
+1351 0 /usr/libexec/gvfs-afc-volume-monitor
+1370 0
+1381 0 /usr/libexec/gnome-session-binary--systemd--systemd--session=pop
+1460 0 /usr/bin/gnome-keyring-daemon--start--foreground--components=secrets
+1472 0 /usr/bin/ssh-agent/usr/bin/im-launchenvGNOME_SHELL_SESSION_MODE=pop/usr/bin/gnome-session--systemd--session=pop
+1495 0 /usr/libexec/at-spi-bus-launcher
+1500 0 /usr/bin/dbus-daemon--config-file=/usr/share/defaults/at-spi2/accessibility.conf--nofork--print-address3
+1507 0 /usr/libexec/at-spi2-registryd--use-gnome-session
+1514 0 /usr/libexec/gnome-session-ctl--monitor
+1520 0 /usr/libexec/gnome-session-binary--systemd-service--session=pop
+1534 6528 /usr/bin/gnome-shell
+1557 0 ibus-daemon--paneldisable--xim
+1561 0 /usr/libexec/ibus-memconf
+1562 0 /usr/libexec/ibus-extension-gtk3
+1564 0 /usr/libexec/ibus-x11--kill-daemon
+1568 0 /usr/libexec/ibus-portal
+1581 0 /usr/libexec/xdg-permission-store
+1583 0 /usr/libexec/gnome-shell-calendar-server
+1592 0 /usr/libexec/evolution-source-registry
+1600 0 /usr/libexec/dconf-service
+1603 802 /usr/libexec/gvfsd-metadata
+1607 9909 /usr/libexec/geoclue
+1628 0 /usr/libexec/evolution-calendar-factory
+1661 0 /usr/libexec/evolution-addressbook-factory
+1674 0 /usr/bin/gjs/usr/share/gnome-shell/org.gnome.Shell.Notifications
+1690 0 /usr/libexec/gsd-a11y-settings
+1693 0 /usr/libexec/gsd-color
+1697 0 /usr/libexec/gsd-datetime
+1698 0 /usr/libexec/gsd-disk-utility-notify
+1700 0 /usr/libexec/gsd-housekeeping
+1703 0 /usr/libexec/gsd-keyboard
+1704 0 /usr/libexec/gsd-media-keys
+1708 0 /usr/libexec/gsd-power
+1712 0 /usr/libexec/gsd-print-notifications
+1713 0 /usr/libexec/gsd-rfkill
+1714 0 /usr/libexec/gsd-screensaver-proxy
+1715 6560 /usr/libexec/gsd-sharing
+1716 0 /usr/libexec/gsd-smartcard
+1720 0 /usr/libexec/gsd-sound
+1724 0 /usr/libexec/gsd-usb-protection
+1725 0 /usr/libexec/gsd-wacom
+1728 0 /usr/libexec/gsd-wwan
+1729 0 /usr/libexec/gsd-xsettings
+1731 0 /usr/bin/python3/usr/lib/hidpi-daemon/hidpi-notification
+1738 0 /usr/bin/python3/usr/lib/hidpi-daemon/hidpi-daemon
+1748 0 /usr/libexec/evolution-data-server/evolution-alarm-notify
+1767 0 /usr/libexec/ibus-engine-simple
+1835 0 /usr/libexec/colord
+1869 0 /usr/libexec/gsd-printer
+1895 0 /usr/bin/python3/usr/lib/pop-transition/service.py
+1954 0 /usr/libexec/gvfsd-trash--spawner:1.4/org/gtk/gvfs/exec_spaw/0
+2786 0 /usr/libexec/flatpak-session-helper
+2790 0 server--sh-n/run/user/1000/.flatpak-helper/pkcs11-flatpak-2786--providerp11-kit-trust.sopkcs11:model=p11-kit-trust?write-protected=yes
+2792 0 /usr/libexec/xdg-document-portal
+3052 0 /usr/libexec/xdg-desktop-portal
+3063 0 /usr/libexec/xdg-desktop-portal-gtk
+3720 0 io.elementary.appcenter-s
+5039 0 /usr/bin/gnome-calendar--gapplication-service
+5040 0 /usr/bin/seahorse--gapplication-service
+5185 0 /usr/libexec/gvfsd-http--spawner:1.4/org/gtk/gvfs/exec_spaw/1
+7292 0
+11818 0 /usr/bin/ssh-agent-D-a/run/user/1000/keyring/.ssh
+12317 208 /opt/google/chrome/chrome --enable-crashpad
+12324 0 cat
+12325 0 cat
+12328 0 /opt/google/chrome/crashpad_handler--monitor-self--monitor-self-annotation=ptype=crashpad-handler--database=/home/iskander/.config/google-chrome/Crash Reports--metrics-dir=/home/iskander/.config/google-chrome--url=https://clients2.google.com/cr/report--annotation=channel=--annotation=lsb-release=Pop!_OS 20.04 LTS--annotation=plat=Linux--annotation=prod=Chrome_Linux--annotation=ver=93.0.4577.63--initial-client-fd=6--shared-client-connection
+12330 0 /opt/google/chrome/crashpad_handler--no-periodic-tasks--monitor-self-annotation=ptype=crashpad-handler--database=/home/iskander/.config/google-chrome/Crash Reports--url=https://clients2.google.com/cr/report--annotation=channel=--annotation=lsb-release=Pop!_OS 20.04 LTS--annotation=plat=Linux--annotation=prod=Chrome_Linux--annotation=ver=93.0.4577.63--initial-client-fd=4--shared-client-connection
+12336 0 /opt/google/chrome/chrome --type=zygote --no-zygote-sandbox --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --enable-crashpad
+12337 0 /opt/google/chrome/chrome --type=zygote --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --enable-crashpad
+12338 0 /opt/google/chrome/nacl_helper
+12341 0 /opt/google/chrome/chrome --type=zygote --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --enable-crashpad
+12366 113 /opt/google/chrome/chrome --type=utility --utility-sub-type=network.mojom.NetworkService --field-trial-handle=5175709210376863304,10881057105837330145,131072 --lang=en-US --service-sandbox-type=none --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --shared-files=v8_context_snapshot_data:100 --enable-crashpad
+12368 0 /opt/google/chrome/chrome --type=utility --utility-sub-type=storage.mojom.StorageService --field-trial-handle=5175709210376863304,10881057105837330145,131072 --lang=en-US --service-sandbox-type=utility --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --shared-files=v8_context_snapshot_data:100
+12531 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --extension-process --field-trial-handle=5175709210376863304,10881057105837330145,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=9 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+12544 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --extension-process --field-trial-handle=5175709210376863304,10881057105837330145,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=10 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+12557 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --extension-process --field-trial-handle=5175709210376863304,10881057105837330145,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=11 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+12826 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=30 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+12965 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=34 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+13711 1 /opt/google/chrome/chrome --type=utility --utility-sub-type=audio.mojom.AudioService --field-trial-handle=5175709210376863304,10881057105837330145,131072 --lang=en-US --service-sandbox-type=none --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --shared-files=v8_context_snapshot_data:100 --enable-crashpad
+16724 1 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --extension-process --field-trial-handle=5175709210376863304,10881057105837330145,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=124 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+37132 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --extension-process --field-trial-handle=5175709210376863304,10881057105837330145,131072 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=347 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+38925 0 dbus-launch--autolaunch2e1cf6fd039a0c614d4adf4a613d05e0--binary-syntax--close-stderr
+38926 0 /usr/bin/dbus-daemon--syslog-only--fork--print-pid5--print-address7--session
+38928 0 /usr/bin/gnome-keyring-daemon--start--foreground--components=secrets
+39204 0 /usr/bin/python3-mipykernel_launcher-f/home/iskander/.local/share/jupyter/runtime/kernel-a9acac87-7d10-4e8c-bad6-f8536335b4f0.json
+42803 0 /usr/libexec/gvfsd-network--spawner:1.4/org/gtk/gvfs/exec_spaw/2
+42822 0 /usr/libexec/gvfsd-dnssd--spawner:1.4/org/gtk/gvfs/exec_spaw/4
+87083 0 /usr/libexec/gnome-terminal-server
+87092 2 zsh
+87131 0 zsh
+87161 0 zsh
+87163 0 zsh
+87164 0 /home/iskander/.cache/gitstatus/gitstatusd-linux-x86_64-Gv1.5.1-s-1-u-1-d-1-c-1-m-1-vFATAL-t16
+87694 658 /opt/google/chrome/chrome --type=gpu-process --field-trial-handle=5175709210376863304,10881057105837330145,131072 --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --gpu-preferences=UAAAAAAAAAAgAAAQAAAAAAAAAAAAAAAAAABgAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAABgAAAAAAAAAGAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --use-gl=swiftshader-webgl --shared-files
+87700 0 /opt/google/chrome/chrome --type=broker
+100239 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --extension-process --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=1251 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+103244 0 /usr/libexec/gvfsd-recent--spawner:1.4/org/gtk/gvfs/exec_spaw/5
+103263 0 evince/home/iskander/Desktop/Литература/Patterny_proektirovania_dlya_C_i_platformy_NET_Core_2021_Dzheffri_Chilberto_Gaurav_Aroraa.pdf
+103270 0 /usr/libexec/evinced
+103682 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=1327 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+103695 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=1328 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+103784 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=1330 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+103798 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=1331 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+103818 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=1332 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+103852 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=1333 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+105346 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=1360 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+108464 23 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=1409 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+108478 13482 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=1410 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+109281 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --extension-process --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=1425 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+110344 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=1429 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+125651 0 /usr/sbin/cupsd-l
+125653 0 /usr/sbin/cups-browsed
+148933 2 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2360 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+149040 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2365 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+149066 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2367 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+149079 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2368 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+149356 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2378 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+150608 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2399 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+153389 0 bwrap--args35xdg-dbus-proxy--args=37
+153390 0 xdg-dbus-proxy--args=37
+153392 0 bwrap--args35telegram-desktop--
+153538 1241 /app/bin/telegram-desktop-noupdate-tosettings
+153547 0 /app/bin/telegram-desktop-basegtkintegration:1.1830org.telegram.desktop.BaseGtkIntegration-2118ef806729585e37c10b78f3ff567e
+153706 0
+155388 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2502 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+155665 0
+155666 0
+155678 0
+155686 0
+155688 0
+155692 0
+155703 0
+155704 0
+155734 0
+156144 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2506 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+156426 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2511 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+156439 2 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2512 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+156493 41008 /usr/bin/nautilus--gapplication-service
+156679 0 /bin/sh/snap/webstorm/221/bin/webstorm.sh
+156717 0 /snap/webstorm/221/jbr/bin/java-classpath/snap/webstorm/221/lib/bootstrap.jar:/snap/webstorm/221/lib/util.jar:/snap/webstorm/221/lib/jna.jar-XX:ReservedCodeCacheSize=512m-Xms128m-Xmx1975m-XX:+UseG1GC-XX:SoftRefLRUPolicyMSPerMB=50-XX:CICompilerCount=2-XX:+HeapDumpOnOutOfMemoryError-XX:-OmitStackTraceInFastThrow-ea-Dsun.io.useCanonCaches=false-Djdk.http.auth.tunneling.disabledSchemes=""-Djdk.attach.allowAttachSelf=true-Djdk.module.illegalAccess.silent=true-Dkotlinx.coroutines.debug=off-Dsun.tools.attach.tmp.only=true-XX:ErrorFile=/home/iskander/java_error_in_webstorm_%p.log-XX:HeapDumpPath=/home/iskander/java_error_in_webstorm_.hprof-Djb.vmOptionsFile=/home/iskander/.config/JetBrains/WebStorm2021.2/webstorm64.vmoptions-Djava.system.class.loader=com.intellij.util.lang.PathClassLoader-Didea.vendor.name=JetBrains-Didea.paths.selector=WebStorm2021.2-Didea.platform.prefix=WebStorm-Dsplash=truecom.intellij.idea.Main
+156792 0 /snap/webstorm/221/bin/fsnotifier
+156851 232 /usr/bin/node/snap/webstorm/221/plugins/JavaScriptLanguage/jsLanguageServicesImpl/js-language-service.js-id=1633351418944-debug-name=typescript
+157184 0 bwrap--args35xdg-dbus-proxy--args=37
+157185 0 xdg-dbus-proxy--args=37
+157187 0 bwrap--args35telegram-desktop--
+157196 0 /app/bin/telegram-desktop-basegtkintegration:1.1873org.telegram.desktop.BaseGtkIntegration-2118ef806729585e37c10b78f3ff567e
+157304 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --extension-process --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2516 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+157399 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2522 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+157959 0 /usr/bin/zsh-i
+157965 0 /usr/bin/zsh-i
+157995 0 /usr/bin/zsh-i
+157997 0 /usr/bin/zsh-i
+157998 0 /home/iskander/.cache/gitstatus/gitstatusd-linux-x86_64-Gv1.5.1-s-1-u-1-d-1-c-1-m-1-vFATAL-t16
+158064 840 node/usr/local/bin/tsc-winterfaces.ts
+158216 0 bwrap--args35xdg-dbus-proxy--args=37
+158217 0 xdg-dbus-proxy--args=37
+158219 0 bwrap--args35telegram-desktop--
+158228 0 /app/bin/telegram-desktop-basegtkintegration:1.1897org.telegram.desktop.BaseGtkIntegration-2118ef806729585e37c10b78f3ff567e
+158439 2 /usr/bin/zsh-i
+158445 0 /usr/bin/zsh-i
+158475 0 /usr/bin/zsh-i
+158476 0 /usr/bin/zsh-i
+158478 0 /home/iskander/.cache/gitstatus/gitstatusd-linux-x86_64-Gv1.5.1-s-1-u-1-d-1-c-1-m-1-vFATAL-t16
+159293 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2536 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+159388 0
+159919 0
+161389 0 gjs/usr/share/gnome-shell/extensions/ding@rastersoft.com/ding.js-E-P/usr/share/gnome-shell/extensions/ding@rastersoft.com-M0-D0:27:1920:1053:1
+161552 30 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2557 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+161654 6 /snap/code/75/usr/share/code/code --no-sandbox --force-user-env --unity-launch
+161656 0 /snap/code/75/usr/share/code/code --type=zygote --no-zygote-sandbox --no-sandbox
+161657 0 /snap/code/75/usr/share/code/code --type=zygote --no-sandbox
+161686 160 /snap/code/75/usr/share/code/code --type=gpu-process --field-trial-handle=11279411084475972003,292776884563625949,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --disable-color-correct-rendering --no-sandbox --enable-crash-reporter=da724bd4-65ba-4e68-a47e-e850f63b25b4,no_channel --global-crash-keys=da724bd4-65ba-4e68-a47e-e850f63b25b4,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.60.2 --user-data-dir=/home/iskander/.config/Code --gpu-preferences=UAAAAAAAAAAgAAAQAAAAAAAAAAAAAAAAAABgAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAACAAAAAAAAAA= --shared-files
+161689 3 /snap/code/75/usr/share/code/code --type=utility --utility-sub-type=network.mojom.NetworkService --field-trial-handle=11279411084475972003,292776884563625949,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --lang=en-US --service-sandbox-type=none --no-sandbox --enable-crash-reporter=da724bd4-65ba-4e68-a47e-e850f63b25b4,no_channel --global-crash-keys=da724bd4-65ba-4e68-a47e-e850f63b25b4,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.60.2 --user-data-dir=/home/iskander/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --shared-files=v8_context_snapshot_data:100
+161706 66833 /snap/code/75/usr/share/code/code --type=renderer --disable-color-correct-rendering --no-sandbox --field-trial-handle=11279411084475972003,292776884563625949,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --lang=en-US --enable-crash-reporter=da724bd4-65ba-4e68-a47e-e850f63b25b4,no_channel --global-crash-keys=da724bd4-65ba-4e68-a47e-e850f63b25b4,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.60.2 --user-data-dir=/home/iskander/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --app-path=/snap/code/75/usr/share/code/resources/app --no-sandbox --no-zygote --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100 --vscode-window-config=vscode:56e6e6b6-dba5-4383-aec4-bdd9483855d8
+161767 56166 /snap/code/75/usr/share/code/code--inspect-port=0/snap/code/75/usr/share/code/resources/app/out/bootstrap-fork--type=extensionHost--skipWorkspaceStorageLock
+161780 4481 /snap/code/75/usr/share/code/code --type=renderer --disable-color-correct-rendering --no-sandbox --field-trial-handle=11279411084475972003,292776884563625949,131072 --disable-features=CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess --lang=en-US --enable-crash-reporter=da724bd4-65ba-4e68-a47e-e850f63b25b4,no_channel --global-crash-keys=da724bd4-65ba-4e68-a47e-e850f63b25b4,no_channel,_companyName=Microsoft,_productName=VSCode,_version=1.60.2 --user-data-dir=/home/iskander/.config/Code --standard-schemes=vscode-webview,vscode-file --secure-schemes=vscode-webview,vscode-file --bypasscsp-schemes --cors-schemes=vscode-webview,vscode-file --fetch-schemes=vscode-webview,vscode-file --service-worker-schemes=vscode-webview --streaming-schemes --app-path=/snap/code/75/usr/share/code/resources/app --no-sandbox --no-zygote --disable-blink-features=Auxclick --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=7 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100 --vscode-window-config=vscode:ac89ab27-ac89-480f-91ab-59058a371d6e
+161800 1594157 /snap/code/75/usr/share/code/code/snap/code/75/usr/share/code/resources/app/out/bootstrap-fork--type=ptyHost
+161809 0 /snap/code/75/usr/share/code/code/snap/code/75/usr/share/code/resources/app/out/bootstrap-fork--type=watcherService
+161830 0 /snap/code/75/usr/share/code/code/snap/code/75/usr/share/code/resources/app/out/bootstrap-fork--type=searchService
+161869 0 /usr/bin/zsh
+161874 0 /usr/bin/zsh
+161902 0 /usr/bin/zsh
+161904 0 /usr/bin/zsh
+161905 0 /home/iskander/.cache/gitstatus/gitstatusd-linux-x86_64-Gv1.5.1-s-1-u-1-d-1-c-1-m-1-vFATAL-t16
+162236 0
+164155 0
+164263 18 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2564 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+164277 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2565 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+164307 0 /opt/google/chrome/chrome --type=renderer --enable-crashpad --crashpad-handler-pid=12328 --enable-crash-reporter=e766db9d-4a15-4787-9954-079c913f4a1d, --field-trial-handle=5175709210376863304,10881057105837330145,131072 --disable-gpu-compositing --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=2566 --no-v8-untrusted-code-mitigations --shared-files=v8_context_snapshot_data:100
+165057 0 /usr/libexec/fwupd/fwupd
+165291 0
+186210 0
+197197 0
+197206 0
+201233 0
+207892 0
+207896 0
+207910 0
+208142 0
+208332 0
+208403 0
+208423 0
+208569 0
+208570 0
+208593 0
+208594 0
+214982 0
+217549 0
+217591 0
+217628 0
+217634 0
+222765 0
+232900 0
+232936 4522 /usr/libexec/tracker-store
+237927 -3590558 /usr/libexec/tracker-extract
+237990 0 sudo./task1-7.sh
+237991 6158914 /bin/bash./task1-7.sh

@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
-# you root?
+#Вывести в файл список PID всех процессов, которые были запущены командами, расположенными в /sbin/
+
 if [ "$(id -u)" != 0 ]
 then
     echo "Требуются права root" >&2
@@ -9,11 +10,15 @@ fi
 
 :> task1_2_answer
 
-for i in $(ls /proc/ | grep -E "[0-9]+")
+for pid in $(ps -axo pid | tail -n +2)
 do
-    echo $i | readlink /proc/$i/exe | grep "/sbin" | echo $i >> task1_2_answer
+    if [[ -r /proc/$pid/exe ]]
+    then
+        cat /proc/$pid/cmdline | grep "/sbin" | echo $pid >> task1_2_answer
+    fi
 done
 
 
-# readlink /proc/$i/exe - ссылка на полный исполняемый файл
+# cat /proc/$i/cmdline - ссылка на полный исполняемый файл
 # :> - очистка файла
+# $(ps -axo pid | tail -n +2) - идем по всем процессам -ax(все процессы) -o(выводим столбец определенный) со второй строки
